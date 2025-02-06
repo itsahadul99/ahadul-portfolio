@@ -18,7 +18,7 @@ const Navbar = () => {
       {/* Desktop Menu */}
       <div className="hidden lg:flex justify-between items-center gap-8 font-semibold">
         {["Service", "Work", "Resume", "Skills", "Testimonials", "Contact"].map((item) => (
-          <a key={item} href="#" className="group relative">
+          <a key={item}  href={`#${item}`} className="group relative">
             {item}
             <span className="absolute left-0 -bottom-[6px] w-0 h-[2px] bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
           </a>
@@ -45,7 +45,7 @@ const Navbar = () => {
           {["Service", "Work", "Resume", "Skills", "Testimonials", "Contact"].map((item) => (
             <a
               key={item}
-              href="#"
+              href={`/${item}`}
               className="group relative text-xl font-semibold cursor-pointer"
             >
               {item}

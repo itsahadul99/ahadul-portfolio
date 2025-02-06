@@ -1,6 +1,7 @@
 
 import Banner from "../components/Banner";
 import Navbar from "../components/Navbar";
+import RecentWork from "../components/RecentWork";
 import Services from "../components/Services";
 
 const Home = () => {
@@ -11,6 +12,7 @@ const Home = () => {
             <Navbar />
             <Banner />
             <Services />
+            <RecentWork />
         </div>
 
     );
