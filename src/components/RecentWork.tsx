@@ -72,7 +72,7 @@ const RecentWork = () => {
     }, [filter]);
 
     return (
-        <div id='Work' className="relative py-10 md:py-20 overflow-hidden">
+        <div id='Work' className="relative py-10 md:py-20 overflow-hidden px-5">
             {/* Animated background elements */}
             <div className="absolute top-0 left-0 w-full h-full opacity-10">
                 <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl opacity-20 animate-pulse"></div>
@@ -80,17 +80,17 @@ const RecentWork = () => {
             </div>
 
             <div className="max-w-7xl mx-auto relative z-10">
-                <div className="text-center w-full mb-16">
+                <div className="text-center w-full mb-8">
                     <h1 className="text-transparent bg-gradient-to-r from-primary to-[#ddcdfdc7] bg-clip-text text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
                         My Recent Work
                     </h1>
                 </div>
                 <div>
-                    <div className="flex gap-2 w-full md:w-lg mx-auto p-3 bg-[#050709] justify-center rounded-full *:cursor-pointer my-5">
-                        <button onClick={() => setFilter('All')} className={`px-6 py-1 rounded-full ${filter === 'All' ? 'bg-gradient-to-r from-primary to-secondary  text-white' : 'bg-gray-800 text-gray-400'}`}>All</button>
-                        <button onClick={() => setFilter('React')} className={`px-6 py-1 rounded-full ${filter === 'React' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}>FrontEnd</button>
-                        <button onClick={() => setFilter('MongoDB')} className={`px-6 py-1 rounded-full ${filter === 'MongoDB' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}>MERN</button>
-                        <button onClick={() => setFilter('Express')} className={`px-6 py-1 rounded-full ${filter === 'Express' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}>BackEnd</button>
+                    <div className="flex gap-2 w-full md:w-lg mx-auto p-3 bg-[#050709] justify-center rounded-full *:cursor-pointer my-8 text-xs md:text-lg">
+                        <button onClick={() => setFilter('All')} className={`px-6 py-2 rounded-full ${filter === 'All' ? 'bg-gradient-to-r from-primary to-secondary  text-white' : 'bg-gray-800 text-gray-400'}`}>All</button>
+                        <button onClick={() => setFilter('React')} className={`px-6 py-2 rounded-full ${filter === 'React' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}>FrontEnd</button>
+                        <button onClick={() => setFilter('MongoDB')} className={`px-6 py-2 rounded-full ${filter === 'MongoDB' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}>MERN</button>
+                        <button onClick={() => setFilter('Express')} className={`px-6 py-2 rounded-full ${filter === 'Express' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}>BackEnd</button>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                         {filteredProjects.map((project, index) => (
@@ -105,14 +105,14 @@ const RecentWork = () => {
                                 <p className="text-gray-400 mb-4">{project.description}</p>
                                 <div className="flex flex-wrap gap-2 mb-4">
                                     {project.technologies.map((tech, idx) => (
-                                        <span key={idx} className="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-sm">{tech}</span>
+                                        <span key={idx} className="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-xs">{tech}</span>
                                     ))}
                                 </div>
                                 <div className="flex gap-4">
-                                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full hover:from-secondary hover:to-primary transition-all duration-300">Live</a>
-                                    <a href={project.clientCode} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-all duration-300">Client Code</a>
+                                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="px-2 md:px-4 py-2 text-xs md:text-sm bg-gradient-to-r from-primary to-secondary text-white rounded-full hover:from-secondary hover:to-primary transition-all duration-300">Live</a>
+                                    <a href={project.clientCode} target="_blank" rel="noopener noreferrer" className="px-2 md:px-4 py-2 text-xs md:text-sm bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-all duration-300">Client Code</a>
                                     {project.serverCode && (
-                                        <a href={project.serverCode} target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-all duration-300">Server Code</a>
+                                        <a href={project.serverCode} target="_blank" rel="noopener noreferrer" className="px-2 md:px-4 py-2 text-xs md:text-sm bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-all duration-300">Server Code</a>
                                     )}
                                 </div>
                             </div>
