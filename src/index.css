@@ -1,5 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap');
 @import "tailwindcss";
+
 @theme {
     --color-primary: '#8E5BF8';
     --color-secondary: '#0F0715';
+    --default-font-family: "Sora", serif;
 }
+@keyframes updown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+.animated-text {
+    animation: updown 3s ease-in-out infinite alternate;
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px; 
+    height: 10px;
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+    border-radius: 5px;
+}
+
+/* Scrollbar Handle */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #8E5BF8, #DDCDFD); /* Gradient */
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+}
+
+/* Scrollbar Handle on Hover */
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #DDCDFD, #8E5BF8);
+}
+
+/* For Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #8E5BF8 #1a1a1a;
+}
+
