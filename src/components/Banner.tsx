@@ -1,5 +1,6 @@
 import { CiSaveDown1 } from "react-icons/ci";
-import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa6";
+import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
+import { FiGithub } from "react-icons/fi";
 const Banner = () => {
     return (
         <div className="min-h-[calc(100vh-88px)] max-w-7xl mx-auto flex flex-col justify-center items-center">
@@ -14,21 +15,25 @@ const Banner = () => {
                 </text>
 
             </svg>
-            <div className="flex justify-between items-center w-full">
+            <div className="flex justify-between items-center w-full z-50">
                 <div className="flex-1 space-y-7">
                     <h1 className="text-white text-4xl font-bold">I am Ahadul Islam</h1>
-                    <h1 className="text-transparent bg-gradient-to-r from-[#8E5BF8] to-[#DDCDFD] bg-clip-text text-6xl font-bold w-full md:max-w-lg">Web Developer + UX Designer</h1>
-                    <p className="text-xl font-semibold text-white">I break down complex user experience problems to create integrity focussed solutions that connect billions of people</p>
-                    <div className="flex items-center gap-8">
-                        <button className="text-lg flex justify-between gap-2 items-center px-4 py-3 rounded-full border border-red-400 font-medium cursor-pointer">Download CV <CiSaveDown1 size={20} /></button>
-                        <button className="rounded-full border border-red-400 hover:bg-red-200 cursor-pointer p-1"><FaFacebook size={25} /></button>
-                        <button className="rounded-full border border-red-400 hover:bg-red-200 cursor-pointer p-1"><FaLinkedin size={25} /></button>
-                        <button className="rounded-full border border-red-400 hover:bg-red-200 cursor-pointer p-1"><FaGithub size={25} /></button>
+                    <h1 className="text-transparent bg-gradient-to-r from-[#8E5BF8] to-[#DDCDFD] bg-clip-text text-6xl font-bold w-full md:max-w-lg">Web Developer + UX Visionary</h1>
+                    <p className="text-xl font-semibold text-white">
+                        Designing and building intuitive websites that offer seamless user experiences and functional, elegant solutions.
+                    </p>
+
+                    <div className="flex items-center gap-5">
+                        <button className="text-lg flex justify-between gap-2 items-center px-4 py-3 rounded-full border hover:text-white hover:bg-primary ease-in-out duration-500 border-primary text-primary font-medium cursor-pointer">Download CV <CiSaveDown1 size={20} /></button>
+                        <button className="rounded-full border  duration-500 ease-in-out border-primary hover:bg-primary text-primary hover:text-white cursor-pointer p-2"><FaFacebookF size={20} /></button>
+                        <button className="rounded-full border duration-500 ease-in-out border-primary hover:bg-primary text-primary hover:text-white cursor-pointer p-2"><FaLinkedinIn size={20} /></button>
+                        <button className="rounded-full border duration-500 ease-in-out border-primary hover:bg-primary text-primary hover:text-white cursor-pointer p-2"><FiGithub size={20} /></button>
                     </div>
                 </div>
                 <div className="flex-1">
-                    <div className="flex flex-col justify-center items-center w-full">
-                        <img className="size-[420px] border-2 border-red-400 rounded-xl rotate-6 hover:rotate-0 hover:border-white duration-700" src="https://gerold.themejunction.net/wp-content/uploads/2024/05/hero_img.jpg" alt="" />
+                    <div className="flex relative flex-col justify-center items-center w-full">
+                        <div className="absolute bottom-[-100px] left-[-50px] w-[150px] h-[150px] bg-gradient-to-br from-[#8E5BF8] to-[#DDCDFD] rounded-full blur-[120px] opacity-50"></div>
+                        <img className="size-[420px] border-2 border-primary/30 rounded-xl rotate-4 hover:rotate-0 hover:border-primary duration-700" src="https://gerold.themejunction.net/wp-content/uploads/2024/05/hero_img.jpg" alt="" />
                     </div>
                 </div>
             </div>

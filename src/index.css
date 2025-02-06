@@ -2,8 +2,8 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: '#8E5BF8';
-    --color-secondary: '#0F0715';
+    --color-primary: #8E5BF8;
+    --color-secondary: #0F0715;
     --default-font-family: "Sora", serif;
 }
 @keyframes updown {
@@ -49,3 +49,8 @@
     scrollbar-color: #8E5BF8 #1a1a1a;
 }
 
+/* Custom Shadow Effect */
+.custom-shadow {
+    position: relative;
+    filter: drop-shadow(0 40px 0px var(--color-primary)) drop-shadow(0 0px 0px var(--color-secondary));
+}

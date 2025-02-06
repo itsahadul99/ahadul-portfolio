@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import Home from "./pages/Home";
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     // Simulate loading for 2 seconds
     const timer = setTimeout(() => {
