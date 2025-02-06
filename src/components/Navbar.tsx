@@ -37,7 +37,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-0 left-0 w-full h-full bg-black text-white flex justify-center items-center transition-all duration-300 transform z-10 ${
+        className={`lg:hidden fixed top-0 left-0 w-full h-full bg-black text-white flex justify-center items-center transition-all duration-300 transform z-20 ${
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >

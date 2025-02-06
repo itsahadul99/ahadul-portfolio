@@ -14,7 +14,7 @@ const Banner = () => {
                     HI
                 </text>
             </svg>
-            <div className="flex flex-col md:flex-row justify-between items-center w-full gap-10 md:gap-0">
+            <div className="flex flex-col md:flex-row justify-between items-center w-full gap-10 md:gap-0 z-10">
                 <div className="flex-1 space-y-3 md:space-y-5 lg:space-y-7">
                     <h1 className="text-white text-xl md:text-4xl font-bold">I am Ahadul Islam</h1>
                     <h1 className="text-transparent bg-gradient-to-r from-[#8E5BF8] to-[#DDCDFD] bg-clip-text text-3xl md:text-4xl lg:text-6xl font-bold w-full lg:max-w-lg">Web Developer + UX Visionary</h1>
