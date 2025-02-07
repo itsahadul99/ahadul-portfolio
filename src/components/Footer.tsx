@@ -5,13 +5,12 @@ const Footer = () => {
                 <a href="/">
                     <h1 className="text-5xl uppercase font-black text-white">A</h1>
                 </a>
-                <div className="flex items-center gap-5 text-white my-5">
+                <div className="flex items-center gap-3 md:gap-5 text-white my-5">
                     {["Service", "Work", "Resume", "Skills", "Testimonials", "Contact"].map((item) => (
                         <a
                             key={item}
                             href={`/${item}`}
-
-                            className="group relative text-sm md:text-lg font-semibold cursor-pointer"
+                            className="group relative text-xs md:text-lg font-semibold cursor-pointer"
                         >
                             {item}
                             <span className="absolute left-0 -bottom-[6px] w-0 h-[2px] bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
