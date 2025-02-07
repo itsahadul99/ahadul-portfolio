@@ -22,8 +22,8 @@ const RecentWork = () => {
             description: "A platform for participating in contests, showcasing skills, and winning rewards.",
             technologies: ["React", "Express", "MongoDB", "Tanstack", "Tailwind"],
             liveLink: "https://contest-corner.web.app/",
-            clientCode: "https://github.com/codebyahadul/contest-corner-client",
-            serverCode: "https://github.com/codebyahadul/contest-corner-server",
+            clientCode: "https://github.com/itsahadul99/contest-corner-client",
+            serverCode: "https://github.com/itsahadul99/contest-corner-server",
             image: contestCorner
         },
         {
@@ -31,8 +31,8 @@ const RecentWork = () => {
             description: "A hotel room booking website with secure booking and review management.",
             technologies: ["React", "Express", "MongoDB", "Firebase", "Tailwind"],
             liveLink: "https://vacay-vibes.web.app/",
-            clientCode: "https://github.com/codebyahadul/reserve-nest-client",
-            serverCode: "https://github.com/codebyahadul/reserve-nest-server",
+            clientCode: "https://github.com/itsahadul99/reserve-nest-client",
+            serverCode: "https://github.com/itsahadul99/reserve-nest-server",
             image: reserveNest
         },
         {
@@ -56,7 +56,7 @@ const RecentWork = () => {
             description: "A dynamic blogging platform with responsive design and bookmarking features.",
             technologies: ["React", "React Router", "API", "Tailwind"],
             liveLink: "https://bytbleze.netlify.app/",
-            clientCode: "https://github.com/codebyahadul/byteblaze",
+            clientCode: "https://github.com/itsahadul99/byteblaze",
             image: byteBlaze
         }
     ];
