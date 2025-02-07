@@ -99,7 +99,7 @@ const RecentWork = () => {
                                     className="w-full image-container overflow-hidden mb-4">
                                     <img className="rounded-md mb-4 object-cover w-full h-full"
                                         src={project.image}
-                                        alt="book haven" />
+                                        alt={project.name} />
                                 </div>
                                 <h2 className="text-xl font-bold text-white mb-2">{project.name}</h2>
                                 <p className="text-gray-400 mb-4">{project.description}</p>

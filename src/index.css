@@ -6,10 +6,14 @@
     --color-secondary: #0F0715;
     --default-font-family: "Sora", serif;
 }
+
 @keyframes updown {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-20px);
     }
@@ -21,7 +25,7 @@
 
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
-    width: 10px; 
+    width: 10px;
     height: 10px;
 }
 
@@ -33,7 +37,8 @@
 
 /* Scrollbar Handle */
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(45deg, #8E5BF8, #DDCDFD); /* Gradient */
+    background: linear-gradient(45deg, #8E5BF8, #DDCDFD);
+    /* Gradient */
     border-radius: 5px;
     transition: background 0.3s ease-in-out;
 }
@@ -58,14 +63,14 @@
 
 .image-container {
     overflow: hidden;
-    height: 200px; 
-  }
-  
-  .image-container img {
+    height: 200px;
+}
+
+.image-container img {
     transition: transform 1s ease;
     height: 1400px;
-  }
-  
-  .image-container:hover img {
-    transform: translateY(-80%); 
-  }
+}
+
+.image-container:hover img {
+    transform: translateY(-80%);
+}

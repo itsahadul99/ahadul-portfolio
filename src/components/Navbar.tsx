@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-
+import logo from '../assets/logo.png'
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -16,7 +16,7 @@ const Navbar = () => {
     const distance = targetPosition - startPosition;
     const duration = 1000; // Adjust duration for slower scroll (1000ms = 1s)
     let startTime: number | null = null;
-  
+
     const animateScroll = (currentTime:number) => {
       if (startTime === null) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
@@ -39,7 +39,9 @@ const Navbar = () => {
   return (
     <div className="flex justify-between items-center max-w-7xl mx-auto px-5 py-5 text-white">
       <div className="flex items-center gap-2">
-        <h1 className="text-3xl font-bold">Logo</h1>
+        <a href="/">
+        <img className="size-12 bg-blend-screen" src={logo} alt="" />
+        </a>
         <p className="hover:text-primary cursor-pointer">ahadul@gmail.com</p>
       </div>
 

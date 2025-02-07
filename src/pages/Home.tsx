@@ -1,6 +1,8 @@
 
 import Banner from "../components/Banner";
+import Contact from "../components/Contact";
 import EduAndExp from "../components/EduAndExp";
+import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import RecentWork from "../components/RecentWork";
 import Services from "../components/Services";
@@ -17,6 +19,8 @@ const Home = () => {
             <RecentWork />
             <EduAndExp />
             <Skills />
+            <Contact />
+            <Footer />
         </div>
 
     );

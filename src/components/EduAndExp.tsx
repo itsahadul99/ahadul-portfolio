@@ -43,10 +43,10 @@ const EduAndExp = () => {
                                 2022 - Present
                             </h4>
                             <h1 className="text-2xl md:text-4xl font-bold text-white">
-                               Diploma In CST
+                                Diploma In CST
                             </h1>
                             <p className="text-xs md:text-sm font-medium text-white">
-                               Mymensingh Polytechnic Institute, Bangladesh
+                                Mymensingh Polytechnic Institute, Bangladesh
                             </p>
                         </div>
                         <div className="group p-5 rounded-2xl bg-[#21102eea] space-y-3 ease-in-out transition-all duration-1000 hover:bg-gradient-to-r hover:from-primary hover:to-secondary hover:text-white w-full">
@@ -54,10 +54,10 @@ const EduAndExp = () => {
                                 2023 - 2024
                             </h4>
                             <h1 className="text-2xl md:text-4xl font-bold text-white">
-                               Web Development Course
+                                Web Development Course
                             </h1>
                             <p className="text-xs md:text-sm font-medium text-white">
-                              Programming Hero
+                                Programming Hero
                             </p>
                         </div>
                     </div>
