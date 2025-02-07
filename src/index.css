@@ -67,7 +67,7 @@
 }
 
 .image-container img {
-    transition: transform 1s ease;
+    transition: transform 3s ease;
     height: 1400px;
 }
 

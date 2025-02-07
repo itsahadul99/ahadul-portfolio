@@ -13,7 +13,10 @@ function App() {
     <>
       {isLoading ? (
         <div className="min-h-screen flex justify-center items-center bg-[#0F0715]">
-          <h1 className="text-4xl font-bold text-white animate-pulse tracking-widest">Loading...</h1>
+          <h1 className="text-4xl font-bold text-white animate-pulse tracking-widest">Loading..</h1>
+          <div className="flex justify-center items-center h-40">
+            <div className="animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-primary"></div>
+          </div>
         </div>
       ) : (
         <Home />

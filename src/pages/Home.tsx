@@ -1,5 +1,6 @@
 
 import Banner from "../components/Banner";
+import Blogs from "../components/Blogs";
 import Contact from "../components/Contact";
 import EduAndExp from "../components/EduAndExp";
 import Footer from "../components/Footer";
@@ -19,7 +20,9 @@ const Home = () => {
             <RecentWork />
             <EduAndExp />
             <Skills />
+            {/* <Testimonial /> */}
             <Contact />
+            <Blogs />
             <Footer />
         </div>
 

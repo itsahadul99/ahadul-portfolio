@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <div className="relative pt-10 md:pt-20 pb-5 px-5">
+        <div className="relative pt-10 md:pt-20 pb-5 px-5 bg-[#050709]">
             <div className="max-w-7xl mx-auto flex flex-col justify-between items-center">
                 <a href="/">
                     <h1 className="text-5xl uppercase font-black text-white">A</h1>

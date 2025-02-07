@@ -62,6 +62,7 @@ const RecentWork = () => {
     ];
     const [filter, setFilter] = useState('All');
     const [filteredProjects, setFilteredProjects] = useState<Project[]>(projects);
+    const [isLoading, setIsLoading] = useState(false); // Loading state
 
     useEffect(() => {
         if (filter === 'All') {
@@ -70,6 +71,14 @@ const RecentWork = () => {
             setFilteredProjects(projects.filter(project => project.technologies.includes(filter)));
         }
     }, [filter]);
+
+    const handleFilterClick = (selectedFilter: string) => {
+        setIsLoading(true);
+        setFilter(selectedFilter);
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 900);
+    };
 
     return (
         <div id='Work' className="relative py-10 md:py-20 overflow-hidden px-5">
@@ -86,38 +95,71 @@ const RecentWork = () => {
                     </h1>
                 </div>
                 <div>
+                    {/* Filter Buttons */}
                     <div className="flex gap-2 w-full md:w-lg mx-auto p-3 bg-[#050709] justify-center rounded-full *:cursor-pointer my-8 text-xs md:text-lg">
-                        <button onClick={() => setFilter('All')} className={`px-6 py-2 rounded-full ${filter === 'All' ? 'bg-gradient-to-r from-primary to-secondary  text-white' : 'bg-gray-800 text-gray-400'}`}>All</button>
-                        <button onClick={() => setFilter('React')} className={`px-6 py-2 rounded-full ${filter === 'React' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}>FrontEnd</button>
-                        <button onClick={() => setFilter('MongoDB')} className={`px-6 py-2 rounded-full ${filter === 'MongoDB' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}>MERN</button>
-                        <button onClick={() => setFilter('Express')} className={`px-6 py-2 rounded-full ${filter === 'Express' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}>BackEnd</button>
+                        <button 
+                            onClick={() => handleFilterClick('All')} 
+                            className={`px-6 py-2 rounded-full ${filter === 'All' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}
+                        >
+                            All
+                        </button>
+                        <button 
+                            onClick={() => handleFilterClick('React')} 
+                            className={`px-6 py-2 rounded-full ${filter === 'React' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}
+                        >
+                            FrontEnd
+                        </button>
+                        <button 
+                            onClick={() => handleFilterClick('MongoDB')} 
+                            className={`px-6 py-2 rounded-full ${filter === 'MongoDB' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}
+                        >
+                            MERN
+                        </button>
+                        <button 
+                            onClick={() => handleFilterClick('Express')} 
+                            className={`px-6 py-2 rounded-full ${filter === 'Express' ? 'bg-gradient-to-r from-primary to-secondary text-white' : 'bg-gray-800 text-gray-400'}`}
+                        >
+                            BackEnd
+                        </button>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {filteredProjects.map((project, index) => (
-                            <div key={index} className="p-5 rounded-md bg-[#050709] border border-gray-800 hover:border-primary transition-all duration-300">
-                                <div
-                                    className="w-full image-container overflow-hidden mb-4">
-                                    <img className="rounded-md mb-4 object-cover w-full h-full"
-                                        src={project.image}
-                                        alt={project.name} />
+
+                    {/* Loading State */}
+                    {isLoading && (
+                        <div className="flex justify-center items-center h-40">
+                            <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary"></div>
+                        </div>
+                    )}
+
+                    {/* Projects Grid */}
+                    {!isLoading && (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {filteredProjects.map((project, index) => (
+                                <div key={index} className="p-5 rounded-md bg-[#050709] border border-gray-800 hover:border-primary transition-all duration-300">
+                                    <div className="w-full image-container overflow-hidden mb-4">
+                                        <img 
+                                            className="rounded-md mb-4 object-cover w-full h-full"
+                                            src={project.image}
+                                            alt={project.name} 
+                                        />
+                                    </div>
+                                    <h2 className="text-xl font-bold text-white mb-2">{project.name}</h2>
+                                    <p className="text-gray-400 mb-4">{project.description}</p>
+                                    <div className="flex flex-wrap gap-2 mb-4">
+                                        {project.technologies.map((tech, idx) => (
+                                            <span key={idx} className="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-xs">{tech}</span>
+                                        ))}
+                                    </div>
+                                    <div className="flex gap-4">
+                                        <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="px-2 md:px-4 py-2 text-xs md:text-sm bg-gradient-to-r from-primary to-secondary text-white rounded-full hover:from-secondary hover:to-primary transition-all duration-300">Live</a>
+                                        <a href={project.clientCode} target="_blank" rel="noopener noreferrer" className="px-2 md:px-4 py-2 text-xs md:text-sm bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-all duration-300">Client Code</a>
+                                        {project.serverCode && (
+                                            <a href={project.serverCode} target="_blank" rel="noopener noreferrer" className="px-2 md:px-4 py-2 text-xs md:text-sm bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-all duration-300">Server Code</a>
+                                        )}
+                                    </div>
                                 </div>
-                                <h2 className="text-xl font-bold text-white mb-2">{project.name}</h2>
-                                <p className="text-gray-400 mb-4">{project.description}</p>
-                                <div className="flex flex-wrap gap-2 mb-4">
-                                    {project.technologies.map((tech, idx) => (
-                                        <span key={idx} className="px-3 py-1 bg-gray-800 text-gray-400 rounded-full text-xs">{tech}</span>
-                                    ))}
-                                </div>
-                                <div className="flex gap-4">
-                                    <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="px-2 md:px-4 py-2 text-xs md:text-sm bg-gradient-to-r from-primary to-secondary text-white rounded-full hover:from-secondary hover:to-primary transition-all duration-300">Live</a>
-                                    <a href={project.clientCode} target="_blank" rel="noopener noreferrer" className="px-2 md:px-4 py-2 text-xs md:text-sm bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-all duration-300">Client Code</a>
-                                    {project.serverCode && (
-                                        <a href={project.serverCode} target="_blank" rel="noopener noreferrer" className="px-2 md:px-4 py-2 text-xs md:text-sm bg-gray-800 text-white rounded-full hover:bg-gray-700 transition-all duration-300">Server Code</a>
-                                    )}
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

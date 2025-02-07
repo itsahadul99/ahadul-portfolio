@@ -1,32 +1,27 @@
 import Lenis from 'lenis';
 import { useEffect, useRef } from 'react';
 
-const LenisWrapper = ({ children }) => {
-  const lenisRef = useRef(null);
+const LenisWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const lenisRef = useRef<Lenis | null>(null);
 
   useEffect(() => {
-    lenisRef.current = new Lenis({
-      duration: 1.2, // Reduced duration for smoother scrolling
-      easing: (t) => t * (2 - t), 
-      smooth: true,
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t: number) => t * (2 - t),
       orientation: 'vertical',
-      wheel: {
-        direction: 'vertical',
-        normalized: true,
-        smooth: true,
-        factor: 0.5,
-      },
     });
 
-    const scroll = (time) => {
-      lenisRef.current.raf(time);
-      requestAnimationFrame(scroll);
+    lenisRef.current = lenis;
+
+    const raf = (time: number) => {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
     };
 
-    requestAnimationFrame(scroll);
+    requestAnimationFrame(raf);
 
     return () => {
-      lenisRef.current.destroy();
+      lenis.destroy();
     };
   }, []);
 

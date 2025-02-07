@@ -18,7 +18,7 @@ const Contact = () => {
         message: "",
     });
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setFormData({ ...formData, [e.target.id]: e.target.value });
     };
 
@@ -55,12 +55,12 @@ const Contact = () => {
             <div className="max-w-7xl mx-auto px-5">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20 items-center">
                     {/* Contact Form */}
-                    <div className="bg-secondary w-full md:w-xl backdrop-blur-sm rounded-lg p-8 border border-[#050709]/50">
+                    <div className="bg-secondary w-full md:w-sm lg:w-xl backdrop-blur-sm rounded-lg p-8 border border-[#050709]/50">
                         <div className="w-full space-y-5 text-start">
                             <h1 className="text-transparent bg-gradient-to-r from-primary to-[#ddcdfdc7] bg-clip-text text-2xl lg:text-4xl font-bold animate-fade-in">
                                 Let’s work together!
                             </h1>
-                            <p className="text-sm text-white w-full md:w-sm mb-8">
+                            <p className="text-sm text-white w-full lg:w-sm mb-8">
                                 I design and code beautifully simple things and i love what i do. Just simple like that!
                             </p>
                         </div>
@@ -120,7 +120,7 @@ const Contact = () => {
                             <div>
                                 <button
                                     type="submit"
-                                    className="w-full cursor-pointer px-4 py-3 bg-gradient-to-r from-primary to-secondary text-white font-semibold rounded-md hover:opacity-90 transition-opacity"
+                                    className="w-full cursor-pointer px-4 py-3 bg-gradient-to-r from-primary to-secondary hover:bg-gradient-to-r hover:from-secondary hover:to-primary text-white font-semibold rounded-md hover:opacity-90 transition-opacity transform duration-500"
                                 >
                                     Send Message
                                 </button>
