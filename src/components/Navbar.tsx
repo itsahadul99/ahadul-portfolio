@@ -7,7 +7,35 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
-
+  const smoothScroll = (targetId:string) => {
+    const targetElement = document.getElementById(targetId);
+    if (!targetElement) return;
+  
+    const targetPosition = targetElement.getBoundingClientRect().top + window.scrollY;
+    const startPosition = window.scrollY;
+    const distance = targetPosition - startPosition;
+    const duration = 1000; // Adjust duration for slower scroll (1000ms = 1s)
+    let startTime: number | null = null;
+  
+    const animateScroll = (currentTime:number) => {
+      if (startTime === null) startTime = currentTime;
+      const timeElapsed = currentTime - startTime;
+      const ease = easeInOutQuad(timeElapsed, startPosition, distance, duration);
+      window.scrollTo(0, ease);
+      if (timeElapsed < duration) requestAnimationFrame(animateScroll);
+    };
+  
+    requestAnimationFrame(animateScroll);
+  };
+  
+  // Easing Function (for smooth effect)
+  const easeInOutQuad = (t:number, b:number, c:number, d:number) => {
+    t /= d / 2;
+    if (t < 1) return (c / 2) * t * t + b;
+    t--;
+    return (-c / 2) * (t * (t - 2) - 1) + b;
+  };
+  
   return (
     <div className="flex justify-between items-center max-w-7xl mx-auto py-5 text-white">
       <div className="flex items-center gap-2">
@@ -18,7 +46,7 @@ const Navbar = () => {
       {/* Desktop Menu */}
       <div className="hidden lg:flex justify-between items-center gap-8 font-semibold">
         {["Service", "Work", "Resume", "Skills", "Testimonials", "Contact"].map((item) => (
-          <a key={item}  href={`#${item}`} className="group relative">
+          <a key={item}  href={`#${item}`} onClick={() => smoothScroll( item)} className="group relative">
             {item}
             <span className="absolute left-0 -bottom-[6px] w-0 h-[2px] bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
           </a>
@@ -46,6 +74,7 @@ const Navbar = () => {
             <a
               key={item}
               href={`/${item}`}
+              
               className="group relative text-xl font-semibold cursor-pointer"
             >
               {item}

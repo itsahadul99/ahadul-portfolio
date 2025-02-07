@@ -1,5 +1,6 @@
 
 import Banner from "../components/Banner";
+import EduAndExp from "../components/EduAndExp";
 import Navbar from "../components/Navbar";
 import RecentWork from "../components/RecentWork";
 import Services from "../components/Services";
@@ -13,6 +14,7 @@ const Home = () => {
             <Banner />
             <Services />
             <RecentWork />
+            <EduAndExp />
         </div>
 
     );

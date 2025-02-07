@@ -1,4 +1,36 @@
 import { FaReact, FaServer, FaShoppingCart, FaUserAlt, FaDatabase } from 'react-icons/fa';
+const services = [
+  {
+    icon: FaReact,
+    title: 'Full-Stack Web Development',
+    description: 'Building dynamic web applications with the **MERN stack** (MongoDB, Express, React, Node.js) for a seamless user experience.',
+  },
+  {
+    icon: FaUserAlt,
+    title: 'UI/UX Design',
+    description: 'Designing clean, modern, and user-friendly interfaces with a focus on usability and responsive design using **Figma** and **Adobe XD**.',
+  },
+  {
+    icon: FaServer,
+    title: 'Backend Development',
+    description: 'Crafting secure and efficient backend services with **Node.js** and **Express.js**, ensuring smooth server-side operations.',
+  },
+  {
+    icon: FaShoppingCart,
+    title: 'E-Commerce Solutions',
+    description: 'Developing e-commerce platforms with product management, secure payment systems, and customer authentication.',
+  },
+  {
+    icon: FaDatabase,
+    title: 'Real-Time Web Application',
+    description: 'Building interactive applications with **Socket.io** for live updates, including messaging apps and notifications.',
+  },
+  {
+    icon: FaReact,
+    title: 'Progressive Web Apps',
+    description: 'Developing offline-capable applications with fast performance and native app-like experiences using **Service Workers**.',
+  },
+];
 
 const Services = () => {
   return (
@@ -8,7 +40,6 @@ const Services = () => {
         <div className="absolute -top-20 -left-20 w-96 h-96 bg-gradient-to-r from-primary to-secondary rounded-full blur-3xl opacity-20 animate-pulse"></div>
         <div className="absolute -bottom-40 -right-20 w-96 h-96 bg-gradient-to-r from-[#ddcdfdc7] to-primary rounded-full blur-3xl opacity-20 animate-pulse delay-1000"></div>
       </div>
-
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="text-center w-full mb-16">
           <h1 className="text-transparent bg-gradient-to-r from-primary to-[#ddcdfdc7] bg-clip-text text-3xl md:text-4xl lg:text-5xl font-bold mb-6 animate-fade-in">
@@ -50,38 +81,5 @@ const Services = () => {
   );
 };
 
-const services = [
-    {
-      icon: FaReact,
-      title: 'Full-Stack Web Development',
-      description: 'Building dynamic web applications with the **MERN stack** (MongoDB, Express, React, Node.js) for a seamless user experience.',
-    },
-    {
-      icon: FaUserAlt,
-      title: 'UI/UX Design',
-      description: 'Designing clean, modern, and user-friendly interfaces with a focus on usability and responsive design using **Figma** and **Adobe XD**.',
-    },
-    {
-      icon: FaServer,
-      title: 'Backend Development',
-      description: 'Crafting secure and efficient backend services with **Node.js** and **Express.js**, ensuring smooth server-side operations.',
-    },
-    {
-      icon: FaShoppingCart,
-      title: 'E-Commerce Solutions',
-      description: 'Developing e-commerce platforms with product management, secure payment systems, and customer authentication.',
-    },
-    {
-      icon: FaDatabase,
-      title: 'Real-Time Web Application',
-      description: 'Building interactive applications with **Socket.io** for live updates, including messaging apps and notifications.',
-    },
-    {
-      icon: FaReact,
-      title: 'Progressive Web Apps',
-      description: 'Developing offline-capable applications with fast performance and native app-like experiences using **Service Workers**.',
-    },
-  ];
-  
 
 export default Services;
