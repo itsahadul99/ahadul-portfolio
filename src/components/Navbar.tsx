@@ -15,7 +15,6 @@ const Navbar = () => {
     const distance = targetPosition - startPosition;
     const duration = 1000; // Adjust duration for slower scroll (1000ms = 1s)
     let startTime: number | null = null;
-
     const animateScroll = (currentTime:number) => {
       if (startTime === null) startTime = currentTime;
       const timeElapsed = currentTime - startTime;
@@ -52,9 +51,9 @@ const Navbar = () => {
             <span className="absolute left-0 -bottom-[6px] w-0 h-[2px] bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
           </a>
         ))}
-        <button className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary font-bold cursor-pointer transition-all duration-1000 ease-in-out hover:bg-gradient-to-r hover:from-secondary hover:to-primary">
+        <a href="https://drive.google.com/file/d/1HG5FliUEjKXxs7y3m7CdgduE1V7jJ9O3/view?usp=sharing" target="_blank" className="px-6 py-3 rounded-full bg-gradient-to-r from-primary to-secondary font-bold cursor-pointer transition-all duration-1000 ease-in-out hover:bg-gradient-to-r hover:from-secondary hover:to-primary">
           Hire Me
-        </button>
+        </a>
       </div>
       {/* Mobile Menu Button (Hamburger) */}
       <button
@@ -82,9 +81,9 @@ const Navbar = () => {
               <span className="absolute left-0 -bottom-[6px] w-0 h-[2px] bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
-          <button className="px-4 md:px-8 py-2 md:py-4 text-sm md:text-xl rounded-full bg-gradient-to-r from-primary to-secondary font-bold cursor-pointer transition-all duration-1000 ease-in-out hover:bg-gradient-to-r hover:from-secondary hover:to-primary">
+          <a href="https://drive.google.com/file/d/1HG5FliUEjKXxs7y3m7CdgduE1V7jJ9O3/view?usp=sharing" target="_blank" className="px-4 md:px-8 py-2 md:py-4 text-sm md:text-xl rounded-full bg-gradient-to-r from-primary to-secondary font-bold cursor-pointer transition-all duration-1000 ease-in-out hover:bg-gradient-to-r hover:from-secondary hover:to-primary">
             Hire Me
-          </button>
+          </a>
         </div>
       </div>
     </div>

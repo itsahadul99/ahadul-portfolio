@@ -22,10 +22,10 @@ const Banner = () => {
                         Designing and building intuitive websites that offer seamless user experiences and functional, elegant solutions.
                     </p>
                     <div className="flex items-center gap-3 md:gap-5">
-                        <button className="text-xs md:text-lg flex justify-between gap-2 items-center px-2 md:px-4 py-2 md:py-3 rounded-full border hover:text-white hover:bg-primary ease-in-out duration-500 border-primary text-primary font-medium cursor-pointer">Download CV <CiSaveDown1 size={20} /></button>
-                        <button className="rounded-full border  duration-500 ease-in-out border-primary hover:bg-primary text-primary hover:text-white cursor-pointer p-2"><FaFacebookF size={20} /></button>
-                        <button className="rounded-full border duration-500 ease-in-out border-primary hover:bg-primary text-primary hover:text-white cursor-pointer p-2"><FaLinkedinIn size={20} /></button>
-                        <button className="rounded-full border duration-500 ease-in-out border-primary hover:bg-primary text-primary hover:text-white cursor-pointer p-2"><FiGithub size={20} /></button>
+                        <a href="https://drive.google.com/file/d/1HG5FliUEjKXxs7y3m7CdgduE1V7jJ9O3/view?usp=sharing" target="_blank" className="text-xs md:text-lg flex justify-between gap-2 items-center px-2 md:px-4 py-2 md:py-3 rounded-full border hover:text-white hover:bg-primary ease-in-out duration-500 border-primary text-primary font-medium cursor-pointer">Download CV <CiSaveDown1 size={20} /></a>
+                        <a href="https://www.facebook.com/md.ahadul.islam.53831" target="_blank" className="rounded-full border  duration-500 ease-in-out border-primary hover:bg-primary text-primary hover:text-white cursor-pointer p-2"><FaFacebookF size={20} /></a>
+                        <a href="https://www.linkedin.com/feed/" target="_blank" className="rounded-full border duration-500 ease-in-out border-primary hover:bg-primary text-primary hover:text-white cursor-pointer p-2"><FaLinkedinIn size={20} /></a>
+                        <a href="https://github.com/itsahadul99" target="_blank" className="rounded-full border duration-500 ease-in-out border-primary hover:bg-primary text-primary hover:text-white cursor-pointer p-2"><FiGithub size={20} /></a>
                     </div>
                 </div>
                 <div className="flex-1">
