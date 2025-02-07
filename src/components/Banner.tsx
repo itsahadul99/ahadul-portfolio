@@ -31,7 +31,7 @@ const Banner = () => {
                 <div className="flex-1">
                     <div className="flex relative flex-col justify-center items-center w-full">
                         <div className="absolute bottom-[-100px] left-[-50px] w-[150px] h-[150px] bg-gradient-to-br from-[#8E5BF8] to-[#DDCDFD] rounded-full blur-[120px] opacity-50"></div>
-                        <img className="size-[300px] md:size-[350px] lg:size-[420px] border-2 border-primary/30 rounded-xl rotate-4 hover:rotate-0 hover:border-primary duration-700" src="https://gerold.themejunction.net/wp-content/uploads/2024/05/hero_img.jpg" alt="" />
+                        <img className="size-[300px] md:size-[350px] lg:size-[420px] border-2 border-primary/30 rounded-xl rotate-4 hover:rotate-0 hover:border-primary duration-700 object-cover" src="https://t3.ftcdn.net/jpg/06/01/17/18/360_F_601171862_l7yZ0wujj8o2SowiKTUsfLEEx8KunYNd.jpg" alt="" />
                     </div>
                 </div>
             </div>
