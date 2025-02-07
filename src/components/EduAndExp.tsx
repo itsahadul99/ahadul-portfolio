@@ -11,7 +11,7 @@ const EduAndExp = () => {
             </div>
             <div className="max-w-7xl mx-auto px-5">
                 <div className="flex flex-col md:flex-row items-start justify-between w-full text-3xl md:text-4xl lg:text-5xl mb-16 gap-10 md:gap-20">
-                    <div className="flex-1 space-y-5 md:space-y-8 w-full">
+                    <div className="flex-1 space-y-5 md:space-y-8 w-full z-20">
                         <div className="flex justify-start h-full items-center gap-3 md:gap-5 flex-1">
                             <GiAchievement className="text-primary" />
                             <h1 className="text-transparent bg-gradient-to-r from-primary to-[#ddcdfdc7] bg-clip-text font-bold animate-fade-in">
@@ -31,7 +31,7 @@ const EduAndExp = () => {
                         </div>
 
                     </div>
-                    <div className="flex-1 space-y-5 md:space-y-8 w-full">
+                    <div className="flex-1 space-y-5 md:space-y-8 w-full z-20">
                         <div className="flex items-center gap-3 md:gap-5">
                             <FaGraduationCap className="text-primary" />
                             <h1 className="text-transparent bg-gradient-to-r from-primary to-[#ddcdfdc7] bg-clip-text font-bold animate-fade-in">

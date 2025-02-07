@@ -1,9 +1,10 @@
-import logo from "../assets/logo.png"
 const Footer = () => {
     return (
         <div className="relative pt-10 md:pt-20 pb-5 px-5">
             <div className="max-w-7xl mx-auto flex flex-col justify-between items-center">
-                <img className="size-12" src={logo} alt="" />
+                <a href="/">
+                    <h1 className="text-5xl uppercase font-black text-white">A</h1>
+                </a>
                 <div className="flex items-center gap-5 text-white my-5">
                     {["Service", "Work", "Resume", "Skills", "Testimonials", "Contact"].map((item) => (
                         <a

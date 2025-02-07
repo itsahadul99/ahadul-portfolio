@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
-import logo from '../assets/logo.png'
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -40,7 +39,7 @@ const Navbar = () => {
     <div className="flex justify-between items-center max-w-7xl mx-auto px-5 py-5 text-white">
       <div className="flex items-center gap-2">
         <a href="/">
-        <img className="size-12 bg-blend-screen" src={logo} alt="" />
+        <h1 className="text-5xl uppercase font-black text-white">A</h1>
         </a>
         <p className="hover:text-primary cursor-pointer">ahadul@gmail.com</p>
       </div>
@@ -68,22 +67,22 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div
         className={`lg:hidden fixed top-0 left-0 w-full h-full bg-black text-white flex justify-center items-center transition-all duration-300 transform z-20 ${
-          isMenuOpen ? "translate-x-0" : "translate-x-full"
+          isMenuOpen ? "translate-x-[50%]" : "translate-x-full"
         }`}
       >
-        <div className="flex flex-col items-center space-y-10">
+        <div className="flex flex-col items-start space-y-5 w-full pl-8 md:pl-10">
           {["Service", "Work", "Resume", "Skills", "Testimonials", "Contact"].map((item) => (
             <a
               key={item}
               href={`/${item}`}
               
-              className="group relative text-xl font-semibold cursor-pointer"
+              className="group relative text-sm md:text-xl font-semibold cursor-pointer"
             >
               {item}
               <span className="absolute left-0 -bottom-[6px] w-0 h-[2px] bg-gradient-to-r from-primary to-secondary group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
-          <button className="px-8 py-4 rounded-full bg-gradient-to-r from-primary to-secondary font-bold cursor-pointer transition-all duration-1000 ease-in-out hover:bg-gradient-to-r hover:from-secondary hover:to-primary">
+          <button className="px-4 md:px-8 py-2 md:py-4 text-sm md:text-xl rounded-full bg-gradient-to-r from-primary to-secondary font-bold cursor-pointer transition-all duration-1000 ease-in-out hover:bg-gradient-to-r hover:from-secondary hover:to-primary">
             Hire Me
           </button>
         </div>
