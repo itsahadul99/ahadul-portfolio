@@ -9,7 +9,7 @@ const Footer = () => {
                     {["Service", "Work", "Resume", "Skills", "Testimonials", "Contact"].map((item) => (
                         <a
                             key={item}
-                            href={`/${item}`}
+                            href={`#${item}`}
                             className="group relative text-xs md:text-lg font-semibold cursor-pointer"
                         >
                             {item}

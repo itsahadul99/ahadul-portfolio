@@ -72,7 +72,7 @@ const Navbar = () => {
           {["Service", "Work", "Resume", "Skills", "Testimonials", "Contact"].map((item) => (
             <a
               key={item}
-              href={`/${item}`}
+              href={`#${item}`}
               
               className="group relative text-sm md:text-xl font-semibold cursor-pointer"
             >
