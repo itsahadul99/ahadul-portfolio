@@ -4,6 +4,7 @@ import EduAndExp from "../components/EduAndExp";
 import Navbar from "../components/Navbar";
 import RecentWork from "../components/RecentWork";
 import Services from "../components/Services";
+import Skills from "../components/Skills";
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <Services />
             <RecentWork />
             <EduAndExp />
+            <Skills />
         </div>
 
     );

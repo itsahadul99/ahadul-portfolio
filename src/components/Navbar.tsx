@@ -37,7 +37,7 @@ const Navbar = () => {
   };
   
   return (
-    <div className="flex justify-between items-center max-w-7xl mx-auto py-5 text-white">
+    <div className="flex justify-between items-center max-w-7xl mx-auto px-5 py-5 text-white">
       <div className="flex items-center gap-2">
         <h1 className="text-3xl font-bold">Logo</h1>
         <p className="hover:text-primary cursor-pointer">ahadul@gmail.com</p>
