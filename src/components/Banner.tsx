@@ -3,8 +3,8 @@ import { FaFacebookF, FaLinkedinIn } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 const Banner = () => {
     return (
-        <div className="min-h-[calc(100vh-88px)] max-w-7xl mx-auto flex flex-col justify-center items-center py-10 md:py-20 px-5">
-            <svg className="absolute right-10" viewBox="0 0 1320 300">
+        <div className="md:min-h-[calc(100vh-88px)] max-w-7xl mx-auto flex flex-col justify-center items-center gap-5 md:gap-0 py-8 md:py-20 px-5">
+            <svg className="absolute right-10 hidden md:block" viewBox="0 0 1320 300">
                 <text
                     x="50%"
                     y="70%"
