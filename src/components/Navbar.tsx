@@ -40,9 +40,8 @@ const Navbar = () => {
         <a href="/">
         <h1 className="text-5xl uppercase font-black text-white">A</h1>
         </a>
-        <p className="hover:text-primary cursor-pointer">ahadul@gmail.com</p>
+        <p className="hover:text-primary cursor-pointer">itisahadul@gmail.com</p>
       </div>
-
       {/* Desktop Menu */}
       <div className="hidden lg:flex justify-between items-center gap-8 font-semibold">
         {["Service", "Work", "Resume", "Skills", "Testimonials", "Contact"].map((item) => (
@@ -65,7 +64,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden fixed top-0 left-0 w-full h-full bg-black text-white flex justify-center items-center transition-all duration-300 transform z-20 ${
+        className={`lg:hidden fixed top-0 left-0 w-full min-h-screen bg-black text-white flex justify-center items-start pt-20 transition-all duration-300 transform z-30 ${
           isMenuOpen ? "translate-x-[50%]" : "translate-x-full"
         }`}
       >

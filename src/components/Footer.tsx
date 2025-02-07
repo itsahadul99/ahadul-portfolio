@@ -18,7 +18,7 @@ const Footer = () => {
                         </a>
                     ))}
                 </div>
-                <p className="text-sm text-primary">© 2024 All Rights Reserved by ThemeJunction</p>
+                <p className="text-sm text-primary">© {new Date().getFullYear()} All Rights Reserved by Ahadul Islam</p>
             </div>
         </div>
     );

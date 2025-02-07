@@ -22,7 +22,6 @@
 .animated-text {
     animation: updown 3s ease-in-out infinite alternate;
 }
-
 /* Scrollbar Styles */
 ::-webkit-scrollbar {
     width: 10px;
