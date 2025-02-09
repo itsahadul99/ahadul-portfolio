@@ -74,6 +74,7 @@ const Contact = () => {
                                         placeholder="John"
                                         value={formData.firstName}
                                         onChange={handleChange}
+                                        required
                                     />
                                 </div>
                                 <div>
@@ -95,6 +96,7 @@ const Contact = () => {
                                     placeholder="john.doe@example.com"
                                     value={formData.email}
                                     onChange={handleChange}
+                                    required
                                 />
                             </div>
                             <div>
@@ -105,6 +107,7 @@ const Contact = () => {
                                     placeholder="+01 123 654 8096"
                                     value={formData.phone}
                                     onChange={handleChange}
+                                    required
                                 />
                             </div>
                             <div>
@@ -115,6 +118,7 @@ const Contact = () => {
                                     placeholder="Your message..."
                                     value={formData.message}
                                     onChange={handleChange}
+                                    required
                                 ></textarea>
                             </div>
                             <div>
