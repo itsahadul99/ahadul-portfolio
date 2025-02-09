@@ -8,6 +8,7 @@ import Skills from "../components/Skills";
 import Contact from "../components/Contact";
 import Blogs from "../components/Blogs";
 import Footer from "../components/Footer";
+import ChatBot from "../components/ChatBot";
 const Home = () => {
     const [scrolling, setScrolling] = useState(false);
     const [navHeight, setNavHeight] = useState(0);
@@ -26,7 +27,7 @@ const Home = () => {
             <div className="absolute top-[-100px] right-[-100px] w-[250px] h-[250px] bg-gradient-to-br from-[#8E5BF8] to-[#DDCDFD] rounded-full blur-[120px] opacity-50"></div>
             <div className={`nav-container transition-all duration-500 ease-out ${
                 scrolling 
-                    ? "fixed top-0 w-full z-50 bg-[#0F0715] backdrop-blur-sm"
+                    ? "fixed top-0 w-full z-40 bg-[#0F0715] backdrop-blur-sm"
                     : "relative"
             }`}>
                 <Navbar />
@@ -36,10 +37,11 @@ const Home = () => {
             <Banner />
             <Services />
             <RecentWork />
-            <EduAndExp />
             <Skills />
+            <EduAndExp />
             <Contact />
             <Blogs />
+            <ChatBot />
             <Footer />
         </div>
     );
