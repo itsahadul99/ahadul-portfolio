@@ -39,7 +39,7 @@ const ChatBot = () => {
         setInput(""); // Clear input after sending message
 
         try {
-            const res = await axios.post("https://portfolio-bot-git-main-ahadul-islams-projects-77abde41.vercel.app/chat", { message: input });
+            const res = await axios.post("https://portfolio-bot-lilac.vercel.app/chat", { message: input });
             const botMessage: Message = {
                 role: "bot",
                 content: res.data.reply,
@@ -68,7 +68,7 @@ const ChatBot = () => {
     };
 
     return (
-        <div className="fixed bottom-5 right-5 z-50 text-xs md:text-sm">
+        <div className="fixed bottom-5 right-5 z-50 text-[10px] md:text-[12px]">
             {/* Chat Toggle Button */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
@@ -118,7 +118,7 @@ const ChatBot = () => {
                                 <FaUser size={15} />
                             </div>
                             <div className="flex items-center gap-2">
-                                <ImSpinner8 className="animate-spin" /> {/* Spinner icon */}
+                                <ImSpinner8 className="animate-spin" />
                                 <span>Typing...</span>
                             </div>
                         </div>
