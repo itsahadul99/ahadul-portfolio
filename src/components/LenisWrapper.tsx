@@ -6,20 +6,22 @@ const LenisWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => 
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t: number) => t * (2 - t),
-      orientation: 'vertical',
+      duration: 0.5, // Smoothing duration
+      easing: (t: number) => t * (2 - t), // Easing function for smooth effect
+      orientation: 'vertical', // Vertical scrolling
     });
 
     lenisRef.current = lenis;
 
-    const raf = (time: number) => {
+    // Smooth scroll loop
+    const smoothScroll = (time: number) => {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      requestAnimationFrame(smoothScroll); // Recurse with the next frame
     };
 
-    requestAnimationFrame(raf);
+    requestAnimationFrame(smoothScroll);
 
+    // Cleanup function to destroy Lenis when the component unmounts
     return () => {
       lenis.destroy();
     };

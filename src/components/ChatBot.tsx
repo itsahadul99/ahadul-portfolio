@@ -25,19 +25,7 @@ const ChatBot = () => {
             chatContainerRef.current.scrollTop = chatContainerRef.current.scrollHeight;
         }
     }, [messages]);
-    // Stop scroll event propagation
-    useEffect(() => {
-        const chatContainer = chatContainerRef.current;
-        if (chatContainer) {
-            const handleScroll = (e: Event) => {
-                e.stopPropagation(); 
-            };
-            chatContainer.addEventListener("scroll", handleScroll);
-            return () => {
-                chatContainer.removeEventListener("scroll", handleScroll);
-            };
-        }
-    }, []);
+
     const sendMessage = async () => {
         if (!input.trim() || isLoading) return;
 
@@ -101,11 +89,11 @@ const ChatBot = () => {
             </button>
 
             {/* Chat Window */}
-            <AnimatePresence>
+            <AnimatePresence >
                 {isOpen && (
                     <motion.div
                         initial={{ opacity: 0, y: 50, scale: 0.8 }}
-                        animate={{ opacity: 1, y: 0, scale: 1, }}
+                        animate={{ opacity: 1, y: 0, scale: 1 }}
                         exit={{ opacity: 0, y: 50, scale: 0.8 }}
                         transition={{ duration: 0.3, ease: "easeInOut" }}
                         className="fixed bottom-20 right-5 w-80 md:w-96 bg-white border border-gray-200 shadow-2xl rounded-lg overflow-hidden"
@@ -124,7 +112,7 @@ const ChatBot = () => {
                         {/* Chat Messages */}
                         <div
                             ref={chatContainerRef}
-                            className="h-64 md:h-80 overflow-y-auto p-4 bg-gray-50"
+                            className="h-52 md:h-72 lg:h-[400px] overflow-y-auto p-4 bg-gray-50"
                         >
                             {messages.map((msg, index) => (
                                 <motion.div
@@ -156,7 +144,6 @@ const ChatBot = () => {
                                     </div>
                                 </motion.div>
                             ))}
-
                             {/* Loading Indicator */}
                             {isLoading && (
                                 <motion.div
@@ -185,7 +172,7 @@ const ChatBot = () => {
                             />
                             <button
                                 onClick={sendMessage}
-                                className="ml-2 p-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors disabled:opacity-50"
+                                className="ml-2 p-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors disabled:opacity-50 cursor-pointer"
                                 disabled={isLoading}
                             >
                                 <BsSendFill size={18} />

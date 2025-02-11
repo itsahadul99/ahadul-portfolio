@@ -200,7 +200,7 @@ const RecentWork = () => {
                             <div className='w-full flex justify-center items-center'>
                                 <button onClick={() => {
                                     setCard(filteredProjects.length)
-                                }} className={card < filteredProjects.length ?"px-6 py-3 mt-8 mx-auto rounded-full bg-gradient-to-r from-primary to-secondary font-bold cursor-pointer transition-all duration-1000 ease-in-out hover:bg-gradient-to-r hover:from-secondary hover:to-primary": 'hidden'}>
+                                }} className={card < filteredProjects.length ? "px-6 py-3 mt-8 mx-auto rounded-full bg-gradient-to-r from-primary to-secondary font-bold cursor-pointer transition-all duration-1000 ease-in-out hover:bg-gradient-to-r hover:from-secondary hover:to-primary" : 'hidden'}>
                                     Load More
                                 </button>
                             </div>
