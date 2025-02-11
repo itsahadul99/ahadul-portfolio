@@ -1,31 +1,29 @@
 import Lenis from 'lenis';
 import { useEffect, useRef } from 'react';
 
-const LenisWrapper: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const LenisWrapper: React.FC<{ children: React.ReactNode; disabled?: boolean }> = ({ children, disabled }) => {
   const lenisRef = useRef<Lenis | null>(null);
-
   useEffect(() => {
+    if (disabled) return; 
     const lenis = new Lenis({
-      duration: 0.5, // Smoothing duration
-      easing: (t: number) => t * (2 - t), // Easing function for smooth effect
-      orientation: 'vertical', // Vertical scrolling
+      duration: 0.5,
+      easing: (t: number) => t * (2 - t),
+      orientation: 'vertical',
     });
 
     lenisRef.current = lenis;
 
-    // Smooth scroll loop
     const smoothScroll = (time: number) => {
       lenis.raf(time);
-      requestAnimationFrame(smoothScroll); // Recurse with the next frame
+      requestAnimationFrame(smoothScroll);
     };
 
     requestAnimationFrame(smoothScroll);
 
-    // Cleanup function to destroy Lenis when the component unmounts
     return () => {
       lenis.destroy();
     };
-  }, []);
+  }, [disabled]);
 
   return <>{children}</>;
 };

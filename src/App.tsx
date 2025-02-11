@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
 import Home from "./pages/Home";
+import LenisWrapper from "./components/LenisWrapper";
 function App() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isOpen, setIsOpen] = useState<boolean>(false);
   useEffect(() => {
     // Simulate loading for 2 seconds
     const timer = setTimeout(() => {
@@ -19,7 +21,9 @@ function App() {
           </div>
         </div>
       ) : (
-        <Home />
+        <LenisWrapper disabled={isOpen}>
+          <Home isOpen={isOpen} setIsOpen={setIsOpen}/>
+        </LenisWrapper>
       )}
     </>
   );
