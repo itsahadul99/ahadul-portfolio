@@ -2,7 +2,6 @@ import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
