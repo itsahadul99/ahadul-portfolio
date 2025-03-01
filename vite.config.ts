@@ -36,8 +36,8 @@ const pwaOptions: Partial<VitePWAOptions> = {
           },
         },
       },
-    ]
-
+    ],
+    maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
   },
   manifest: {
     short_name: 'Portfolio',
