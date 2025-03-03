@@ -20,7 +20,7 @@ function createAmazingProjects() {
 
   return {
     message: "Let's collaborate and create something amazing!",
-    contact: "Scroll down to connect →"
+    contact: "Scroll down 👇🏻 to connect →"
   };
 }`;
 
@@ -41,7 +41,7 @@ function createAmazingProjects() {
             } else {
                 clearInterval(typingInterval);
             }
-        }, 50);
+        }, 30);
 
         return () => clearInterval(typingInterval);
     }, [typedText, codeSnippet]);
@@ -120,32 +120,38 @@ function createAmazingProjects() {
                                 <pre className="whitespace-pre-wrap">
                                     <code className="block">
                                         <span className="text-[#8E5BF8]">
-                                            {typedText.split('\n').map((line: string, lineIndex: number) => (
-                                                <span key={`line-${lineIndex}`}>
-                                                    {line.split(' ').map((word: string, wordIndex: number) => {
-                                                        if (word.match(/^(import|function|const|return|from|to)$/)) {
+                                            {
+                                                typedText.split('\n').map((line, lineIndex) => (
+                                                    <span key={`line-${lineIndex}`}>
+                                                        {line.split(/(\s+)/).map((word, wordIndex) => {
+                                                            let className = "text-white"; // Default color
+
+                                                            // Keywords
+                                                            if (word.match(/^(import|function|const|return|from|to)$/)) {
+                                                                className = "text-primary"; // Purple for keywords
+                                                            }
+                                                            // Object keys
+                                                            else if (word.match(/^(mySkills|message:|contact:)$/)) {
+                                                                className = "text-green-400"; // Green for object keys
+                                                            }
+                                                            // Array values
+                                                            else if (word.match(/^(frontend:|backend:|tools:|passion:)$/)) {
+                                                                className = "text-yellow-400"; // Yellow for array values
+                                                            }
+                                                            // Symbols
+                                                            else if (word.match(/^[{}[\]():;,=><]+$/)) {
+                                                                className = "text-red-400"; // Red for symbols
+                                                            }
+
                                                             return (
-                                                                <span key={`word-${lineIndex}-${wordIndex}`} className="text-primary">
-                                                                    {word}{' '}
+                                                                <span key={`word-${lineIndex}-${wordIndex}`} className={className}>
+                                                                    {word}
                                                                 </span>
                                                             );
-                                                        }else if (word.match(/^(mySkills|message:|contact:)$/)) {
-                                                            return (
-                                                                <span key={`word-${lineIndex}-${wordIndex}`} className="text-green-400">
-                                                                    {word}{' '}
-                                                                </span>
-                                                            );
-                                                        }else {
-                                                            return (
-                                                                <span key={`word-${lineIndex}-${wordIndex}`} className="text-white">
-                                                                    {word}{' '}
-                                                                </span>
-                                                            );
-                                                        }
-                                                    })}
-                                                    {'\n'}
-                                                </span>
-                                            ))}
+                                                        })}
+                                                        {'\n'}
+                                                    </span>
+                                                ))}
                                         </span>
                                     </code>
                                 </pre>
