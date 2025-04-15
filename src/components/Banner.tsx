@@ -77,7 +77,7 @@ function createAmazingProjects() {
                             Download CV <CiSaveDown1 size={20} />
                         </a>
                         <a
-                            href="https://www.facebook.com/md.ahadul.islam.53831"
+                            href="https://www.facebook.com/devahadul"
                             target="_blank"
                             className="rounded-full border duration-500 ease-in-out border-primary hover:bg-primary text-primary hover:text-white cursor-pointer p-2"
                             rel="noopener noreferrer"
